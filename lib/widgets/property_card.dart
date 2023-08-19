@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:propertunity_control_panel/admin/admin_controller.dart';
 
 import '../property/property_screen.dart';
 
 class PropertyCard extends StatelessWidget {
-  const PropertyCard({
+  final int index;
+  PropertyCard({
     super.key,
+    required this.index,
   });
+
+  final AdminController _adminController = Get.put(AdminController());
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => Get.to(
-        const PropertyScreen(),
+        PropertyScreen(
+            // contextPropertyDetailsScreen: context,
+            ),
       ),
       child: Container(
         width: MediaQuery.of(context).size.height / 2,
@@ -61,21 +68,21 @@ class PropertyCard extends StatelessWidget {
                           (states) => Colors.red),
                     ),
                     onPressed: () {
-                      // Get.off(
-                      //   const AdminScreen(),
-                      //   transition: Transition.fade,
-                      //   duration: const Duration(seconds: 1),
-                      // );
+                      Get.to(
+                        arguments: [_adminController.allPosts?[index].id],
+                        () => PropertyScreen(),
+                      );
                     },
                     child: const Text('Deny'),
                   )
                 ],
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 60),
-              const Text(
-                'Property Name or any details',
-                style: TextStyle(
+              Text(
+                '${_adminController.allPosts?[index].propertyId}',
+                style: const TextStyle(
                   fontFamily: 'Outfit',
+                  fontSize: 25,
                 ),
               ),
             ],

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../widgets/section.dart';
 
 class PropertyScreen extends StatelessWidget {
-  const PropertyScreen({super.key});
+  const PropertyScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

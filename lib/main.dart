@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           color: Color.fromARGB(255, 18, 147, 134),
         ),
       ),
-      initialRoute: Routes.getLoginRoute(), //getLoginRoute()
+      initialRoute: Routes.getAdminRoute(), //getLoginRoute()
       getPages: Routes.routes,
       debugShowCheckedModeBanner: false,
     );

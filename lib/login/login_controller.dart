@@ -52,8 +52,8 @@ class LoginController extends GetxController {
       ),
     );
     await checkSubmitLogin();
-    if (true) {
-      //isLoading
+    if (isLogin) {
+      //isLogin
       Get.back(closeOverlays: true);
       Get.dialog(
         barrierDismissible: false,
@@ -83,7 +83,7 @@ class LoginController extends GetxController {
         const Duration(seconds: 1),
         () {
           Get.off(
-            () => const AdminScreen(),
+            () => AdminScreen(),
             transition: Transition.fade,
             duration: const Duration(
               milliseconds: 700,

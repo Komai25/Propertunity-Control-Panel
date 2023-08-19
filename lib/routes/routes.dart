@@ -20,11 +20,11 @@ class Routes {
     ),
     GetPage(
       name: admin,
-      page: () => const AdminScreen(),
+      page: () => AdminScreen(),
     ),
     GetPage(
       name: property,
-      page: () => const PropertyScreen(),
+      page: () => PropertyScreen(),
     )
   ];
 }
